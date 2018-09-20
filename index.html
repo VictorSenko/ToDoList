@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To do List</title>
+    <link rel="stylesheet" href="attempts/css/style.css">
+    <script src="attempts/libs/jquery.js"></script>
+</head>
+<body>
+    <div class="main__wrapper">
+        <div class="main__navigation-wrapper">
+            <div class="main__navigation">Текущие задачи</div>
+            <div class="main__navigation">Выполненные задачи</div>
+            <div class="main__navigation">Удаленные задачи</div>
+        </div>
+        
+        <div class="main__table-wrapper">
+            <div class="main__table main__table-actual">
+                <table  width="80%">
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="main__table main__table-done"></div>
+            <div class="main__table main__table-delete"></div> 
+            <input type="button" value="Добавить задание" name="add-task" class="add-task">
+        </div>
+        
+    </div>
+    <div class="modal">
+        <div class="modal__window">
+            <div class="modal__window-navigate">
+                <input type="button" value="X" class="modal__window-exit">
+            </div>
+            <div class="modal__window-body">
+                <input type="text" class="modal__window-input" placeholder="Название задания">
+                <textarea placeholder="Введите описание" class="modal__window-textarea" rows="10"></textarea>
+                <div class="modal__body-radio">
+                    <pre>Low      Normal     High</pre><br>
+                    <input type="radio" name="modal__radio" class="modal__radio-buttons">
+                    <input type="radio" name="modal__radio" class="modal__radio-buttons">
+                    <input type="radio" name="modal__radio" class="modal__radio-buttons">
+                </div>
+                
+            </div>
+            <div class="modal__window-buttons">
+                <input type="button" value="Добавить" class="modal__window-submit">
+            </div>
+        </div>
+    </div>
+    <script src="attempts/js/script.js"></script>
+</body>
+</html>
