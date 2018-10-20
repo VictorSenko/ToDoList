@@ -1,17 +1,25 @@
 //Проверяем, есть ли значения в local storage.
 //Усли есть - присваиваем значение массиву arr, если нет - создаем новый.
 if ((localStorage.getItem('task') !== null)) {
-    var arr = JSON.parse(localStorage.getItem('task'));
+    var arrList = JSON.parse(localStorage.getItem('task'));
 }
 else {
-    var arr = [];
+    var arrList = [];
 }
-//отрисовка заданий из local storage
-function localDrow(){
+if (arrList[0] === undefined) {
+    var arrActual = [];
+}
+else {
+    var arrActual = arrList[0];
+}
+console.log(arrActual);
+console.log(arrList);
+//отрисовка заданий из local storage  
+function localDrow() {
     if (localStorage.getItem('task') !== null) {
-        var localValue = JSON.parse(localStorage.getItem('task'));
-        for (var i = 0, len = localValue.length; i < len; i++) {
-            
+        var localValue = JSON.parse(localStorage.getItem('task')); //переделать двумерность
+        for (let i = 0, len = localValue[0].length; i < len; i++) {
+            taskDrow(localValue[0][i]);
         }
     }
 }
@@ -43,6 +51,7 @@ function timeRemain(){
 }
 //Добавление задания
 $('.modal__window-submit').on('click', function () {
+   
     if (timeRemain() > 0) {
         var date = timeRemain() / 3600000;
         var taskProperty = {
@@ -51,9 +60,9 @@ $('.modal__window-submit').on('click', function () {
             curentDate: new Date(),
             compliteDate: Math.ceil(date)
         };
-        arr.push(taskProperty);
-        localStorage.setItem('task', JSON.stringify(arr));
-
+        arrActual.push(taskProperty);
+        arrList[0] = arrActual;
+        localStorage.setItem('task', JSON.stringify(arrList));
         taskDrow(taskProperty);
     }
     else
@@ -75,11 +84,14 @@ function taskDrow(taskProperty) {
 //удаление задания
 $('.main__table-actual').on('click', function (e) {
     if (e.target.hasAttribute('data-delete', 'delete')) {
+        var indexOfDelete = $('.main__table-obj').index($(e.target).closest('.main__table-obj'));
         $('.delete__window').css({
             'top': e.pageY - 50,
             'left': e.pageX + 50,
             'display': 'block'
         });
+        $('.delete__window').attr('index', indexOfDelete);
+         
     }
 });
 $('.delete__window-button-no').on('click', function () {
@@ -87,12 +99,11 @@ $('.delete__window-button-no').on('click', function () {
         'display': 'none'
     });
 });
-$('.delete__window-button-yes').on('click', function (e) {
-    console.log(e);
-    var indexOfDelete = $('.main__table-obj').index(this.parentElement.parentElement);
+//удаление из модалки
+$('.delete__window-button-yes').on('click', function () {
+    var indexOfDelete = $('.delete__window').attr('index');   
     var taskList = JSON.parse(localStorage.getItem('task'));
-    console.log(indexOfDelete)
-        //.attr('task-status', 'deleted-item');
+    taskList[0].splice(indexOfDelete, 1);
 
     localStorage.setItem('task', JSON.stringify(taskList));
     $('div').remove('.main__table-obj');
