@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,12 +16,11 @@
         
         <div class="main__table-wrapper">
             <div class="main__table main__table-actual">
-                <table  width="80%">
-                    <tr>
-                        <td>1</td>
-                        <td>2</td>
-                    </tr>
-                </table>
+                <div class="table__actual-navigation">
+                    <div class="table__navigation-item">Название задания</div>
+                    <div class="table__navigation-item table__navigation-date">Дата создания</div>
+                    <div class="table__navigation-item">Осталось времени</div>
+                </div>
             </div>
             <div class="main__table main__table-done"></div>
             <div class="main__table main__table-delete"></div> 
@@ -37,12 +36,7 @@
             <div class="modal__window-body">
                 <input type="text" class="modal__window-input" placeholder="Название задания">
                 <textarea placeholder="Введите описание" class="modal__window-textarea" rows="10"></textarea>
-                <div class="modal__body-radio">
-                    <pre>Low      Normal     High</pre><br>
-                    <input type="radio" name="modal__radio" class="modal__radio-buttons">
-                    <input type="radio" name="modal__radio" class="modal__radio-buttons">
-                    <input type="radio" name="modal__radio" class="modal__radio-buttons">
-                </div>
+                <input type="datetime-local" class="modal__window-date">
                 
             </div>
             <div class="modal__window-buttons">
@@ -50,6 +44,13 @@
             </div>
         </div>
     </div>
+    <div class="delete__window">
+        <div>Are you sure?</div>
+        
+        <div class="delete__window-button delete__window-button-yes">Yes</div>
+        <div class="delete__window-button delete__window-button-no">No</div>
+    </div>
+    <script src="attempts/js/service.js"></script>
     <script src="attempts/js/script.js"></script>
 </body>
 </html>

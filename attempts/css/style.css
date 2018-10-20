@@ -1,7 +1,6 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+body {
+    background-image: url(bg.jpg);
+    background-size: 100%;
 }
 .main__wrapper{
     width: 70%;
@@ -19,13 +18,27 @@
     width: 100%;
     text-align: center;
     line-height: 2.5;
-    background-color: #ead0ae;
+    background-color: #a3c9e8;
+    opacity: 0.8;
     color: #252d2d;
     cursor: pointer;
     margin-bottom: 10px;
+    margin-left: 10px;
+    border-radius: 5px 5px 0 0;
+}
+.main__navigation:nth-child(1){
+    margin-left: 0;
+}
+.main__navigation-active{
+    padding-bottom: 10px;
+    margin-bottom: 0;
+}
+.main__navigation.main__navigation-active:hover{
+    transition: 0.4s;
+    background-color: #a3c9e8;
 }
 .main__navigation:hover{
-    background-color: #bf9a6a;
+    background-color: #7ca3c3;
 }
 .main__table-wrapper{
     position: absolute;
@@ -35,7 +48,6 @@
     height: 100px;
     display: none;
 }
-
 .main__table table td{
     border: 1px solid black;
     border-radius: 10px;
@@ -46,9 +58,36 @@
 .main__table table td:nth-child(1){
     width: 35%;
 }
+.main__table-task {
+    box-sizing: border-box;
+    width: 22%;
+    padding: 5px;
+    border: 1px solid red;
+    opacity: 0.5;
+    border-radius: 5px;
+    margin-left: 1.7%;
+    text-align:center;
+}
+.main__table-task:first-child{
+    margin-left:0;
+}
+.table__actual-navigation{
+    display: flex;
+}
+.main__table-obj {
+    display: flex;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.table__navigation-item{
+    width: 23%;
+    height: 40px;
+    border: 1px solid black;
+}
 .curent-table{
     display: block;
-    background-color: #8295a5;
+    background-color: #a3c9e8;
+    opacity: 0.8;    
     height: 500px;
 }
 .add-task{
@@ -82,6 +121,9 @@
     height: 25px;
     width: 25px;
 }
+.modal__window-date{
+    margin-left: 25%;
+}
 .modal__window-input{
     margin:auto;
     margin-bottom: 50px;
@@ -90,9 +132,6 @@
 }
 .modal__window-input:nth-child(1){
     margin-top: 50px;
-}
-.modal__body-radio{
-    margin-left: 33%;
 }
 .modal__radio-buttons{
     margin: 20.5px;
@@ -110,4 +149,51 @@
     margin-left: 25%;
     width: 50%;
 }
-
+.buttons__wrapper{
+    position:relative;
+}
+.task__button {
+    display: inline-block;
+    margin-left: 25px;
+    width: 100px;
+    height: 35px;
+    border-radius: 2px;
+    text-align:center;
+    line-height:2;
+    border-radius: 5px;
+}
+.complite-button {
+    background-color: #44a944;
+}
+.edit-button {
+    background-color: #dcd150;
+}
+.delete-button {
+    background-color: #d05c5c;
+}
+.task__button:hover{
+    opacity: 0.7;
+    cursor: pointer;
+}
+.delete__window {
+    width: 15vw;
+    height: 15vh;
+    position: absolute;
+    background-color: #acc6cc;
+    display: none;
+    border-radius: 5px;
+    text-align:center;
+    line-height:3;
+}
+.delete__window-button {
+    display: inline-block;
+    width: 30%;
+    height: 30%;
+    background-color: #a3a1a7;
+    line-height: 2;
+    color: #1b3852;
+    cursor: pointer;
+}
+.delete__window-button:hover{
+    opacity: 0.7;
+}
