@@ -22,8 +22,20 @@
                     <div class="table__navigation-item">Осталось времени</div>
                 </div>
             </div>
-            <div class="main__table main__table-done"></div>
-            <div class="main__table main__table-delete"></div> 
+            <div class="main__table main__table-done">
+                <div class="table__actual-navigation">
+                    <div class="table__navigation-item">Название задания</div>
+                    <div class="table__navigation-item table__navigation-date">Дата создания</div>
+                    <div class="table__navigation-item">Осталось времени</div>
+                </div>
+            </div>
+            <div class="main__table main__table-delete">
+                <div class="table__actual-navigation">
+                    <div class="table__navigation-item">Название задания</div>
+                    <div class="table__navigation-item table__navigation-date">Дата создания</div>
+                    <div class="table__navigation-item">Осталось времени</div>
+                </div>
+            </div> 
             <input type="button" value="Добавить задание" name="add-task" class="add-task">
         </div>
         
@@ -50,7 +62,24 @@
         <div class="delete__window-button delete__window-button-yes">Yes</div>
         <div class="delete__window-button delete__window-button-no">No</div>
     </div>
-    <script src="attempts/js/service.js"></script>
+
+
+    <div class="edit__window">
+        <div class="edit__window-header">Edit Window</div>
+        <div class="modal__window-navigate">
+            <input type="button" value="X" class="edit__window-exit">
+        </div>
+        <div class="modal__window-body">
+            <input type="text" class="modal__window-input edit__window-input" placeholder="Название задания">
+            <textarea placeholder="Введите описание" class="modal__window-textarea edit__window-textarea" rows="10"></textarea>
+            <input type="datetime-local" class="modal__window-date edit__window-date">
+
+        </div>
+        <div class="modal__window-buttons">
+            <input type="button" value="Редактировать" class="modal__window-edit">
+        </div>
+
+    </div>
     <script src="attempts/js/script.js"></script>
 </body>
 </html>

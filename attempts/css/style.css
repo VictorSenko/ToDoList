@@ -171,6 +171,9 @@ body {
 .delete-button {
     background-color: #d05c5c;
 }
+.recover-button {
+    background-color: #fbfbfb;
+}
 .task__button:hover{
     opacity: 0.7;
     cursor: pointer;
@@ -196,4 +199,30 @@ body {
 }
 .delete__window-button:hover{
     opacity: 0.7;
+}
+.edit__window {
+    background-color: aliceblue;
+    position: absolute;
+    width: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+.edit__window-navigate {
+    display: flex;
+    justify-content: flex-end;
+}
+.edit__window-body{
+    display: block;
+}
+.edit__window-header{
+    float: left;
+    padding: 20px 0 0 20px;
+}
+.edit__window-textarea {
+    margin-bottom: 15px;
+}
+.modal__window-edit {
+    margin-bottom: 15px;
 }
